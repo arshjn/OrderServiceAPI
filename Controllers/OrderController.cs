@@ -16,21 +16,22 @@ namespace WebServicesAssignment4.Controllers
 
         OrderService orderService = new OrderService();
 
-        // GET: api/<OrderController>
+        // GET
         [HttpGet, Route("")]
         public List<OrderInfo> Get()
         {
-            return orderService.GetOrders();
+            List<OrderInfo> list = orderService.GetOrders();
+            return list;
         }
 
-        // GET api/<OrderController>/5
+        // GET
         [HttpGet, Route("{id}")]
         public Order Get(int id)
         {
             return orderService.GetOrder(id);
         }
 
-        // PATCH api/<OrderController>
+        // PATCH
         [HttpPatch, Route("id/{id}/tracking/{tno}")]
         public string Patch(int id, string tno)
         {

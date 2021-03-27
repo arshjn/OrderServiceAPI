@@ -7,25 +7,37 @@ namespace WebServicesAssignment4
 {
     public class Order
     {
-        public int orderID;
-        public int customerID;
-        public DateTime orderDate;
-        public decimal shippingPrice;
-        public int? trackingNumber;
-        public List<OrderDetail> orderDetails = new List<OrderDetail>();
-        public Customer customer = new Customer();
+        private int orderID;
+        private int customerID;
+        private DateTime orderDate;
+        private decimal shippingPrice;
+        private string? trackingNumber;
+        private List<OrderDetail> orderDetails = new List<OrderDetail>();
+        private Customer customer = new Customer();
+
+        public int OrderID { get => orderID; set => orderID = value; }
+        public int CustomerID { get => customerID; set => customerID = value; }
+        public DateTime OrderDate { get => orderDate; set => orderDate = value; }
+        public decimal ShippingPrice { get => shippingPrice; set => shippingPrice = value; }
+        public string? TrackingNumber { get => trackingNumber; set => trackingNumber = value; }
+        public List<OrderDetail> OrderDetails { get => orderDetails; set => orderDetails = value; }
+        public Customer Customer { get => customer; set => customer = value; }
     }
 
     public class OrderInfo
     {
-        public int orderID;
-        public string customerName;
-        public DateTime OrderDate;
+        private int orderID;
+        private string customerName;
+        private DateTime orderDate;
+
+        public int OrderID { get => orderID; set => orderID = value; }
+        public string CustomerName { get => customerName; set => customerName = value; }
+        public DateTime OrderDate { get => orderDate; set => orderDate = value; }
 
         public OrderInfo(int id, string name, DateTime date)
         {
-            orderID = id;
-            customerName = name;
+            OrderID = id;
+            CustomerName = name;
             OrderDate = date;
         }
     }
@@ -33,53 +45,72 @@ namespace WebServicesAssignment4
     public class Address
     {
 
-        public int addressId;
+        private int addressId;
 
-        public string street1;
+        private string street1;
 
-        public string street2;
+        private string street2;
 
-        public string city;
+        private string city;
 
-        public string state;
+        private string state;
 
-        public int zip;
+        private int zip;
+
+        public int AddressId { get => addressId; set => addressId = value; }
+        public string Street1 { get => street1; set => street1 = value; }
+        public string Street2 { get => street2; set => street2 = value; }
+        public string City { get => city; set => city = value; }
+        public string State { get => state; set => state = value; }
+        public int Zip { get => zip; set => zip = value; }
     }
 
 
     public class OrderDetail
     {
 
-        public int orderDetailId;
+        private int orderDetailId;
 
-        public int orderId;
+        private int orderId;
 
-        public int productId;
+        private int productId;
 
-        public Product products;
+        private Product products;
 
-        public int quantity;
+        private int quantity;
 
-        public decimal price;
+        private decimal price;
+
+        public int OrderDetailId { get => orderDetailId; set => orderDetailId = value; }
+        public int OrderId { get => orderId; set => orderId = value; }
+        public int ProductId { get => productId; set => productId = value; }
+        public Product Products { get => products; set => products = value; }
+        public int Quantity { get => quantity; set => quantity = value; }
+        public decimal Price { get => price; set => price = value; }
     }
 
     public class Product
     {
 
-        public int productId;
+        private int productId;
 
-        public string name;
+        private string name;
 
-        public string description;
+        private string description;
 
-        public decimal price;
+        private decimal price;
+
+        public int ProductId { get => productId; set => productId = value; }
+        public string Name { get => name; set => name = value; }
+        public string Description { get => description; set => description = value; }
+        public decimal Price { get => price; set => price = value; }
 
         public Product(int pid, string n, string d, decimal p)
         {
-            productId = pid;
-            name = n;
-            description = d;
-            price = p;
+            ProductId = pid;
+            Name = n;
+            Description = d;
+            Price = p;
         }
 
     }
@@ -87,21 +118,29 @@ namespace WebServicesAssignment4
     public class Customer
     {
 
-        public int customerId;
+        private int customerId;
 
-        public string firstName;
+        private string firstName;
 
-        public string lastName;
+        private string lastName;
 
-        public string email;
+        private string email;
 
-        public int shippingAddressId;
+        private int shippingAddressId;
 
-        public Address shippingAddress = new Address();
+        private Address shippingAddress = new Address();
 
-        public int billingAddressId;
+        private int billingAddressId;
 
-        public Address billingAddress = new Address();
+        private Address billingAddress = new Address();
 
+        public int CustomerId { get => customerId; set => customerId = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Email { get => email; set => email = value; }
+        public int ShippingAddressId { get => shippingAddressId; set => shippingAddressId = value; }
+        public int BillingAddressId { get => billingAddressId; set => billingAddressId = value; }
+        public Address ShippingAddress { get => shippingAddress; set => shippingAddress = value; }
+        public Address BillingAddress { get => billingAddress; set => billingAddress = value; }
     }
 }
