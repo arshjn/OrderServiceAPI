@@ -11,7 +11,7 @@ namespace WebServicesAssignment4
         private int customerID;
         private DateTime orderDate;
         private decimal shippingPrice;
-        private string? trackingNumber;
+        private string trackingNumber;
         private List<OrderDetail> orderDetails = new List<OrderDetail>();
         private Customer customer = new Customer();
 
@@ -19,9 +19,10 @@ namespace WebServicesAssignment4
         public int CustomerID { get => customerID; set => customerID = value; }
         public DateTime OrderDate { get => orderDate; set => orderDate = value; }
         public decimal ShippingPrice { get => shippingPrice; set => shippingPrice = value; }
-        public string? TrackingNumber { get => trackingNumber; set => trackingNumber = value; }
+        public string TrackingNumber { get => trackingNumber; set => trackingNumber = value; }
         public List<OrderDetail> OrderDetails { get => orderDetails; set => orderDetails = value; }
         public Customer Customer { get => customer; set => customer = value; }
+
     }
 
     public class OrderInfo

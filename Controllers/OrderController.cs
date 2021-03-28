@@ -14,7 +14,7 @@ namespace WebServicesAssignment4.Controllers
     public class OrderController : ControllerBase
     {
 
-        OrderService orderService = new OrderService();
+        static OrderService orderService = new OrderService();
 
         // GET
         [HttpGet, Route("")]
