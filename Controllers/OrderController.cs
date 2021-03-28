@@ -20,8 +20,7 @@ namespace WebServicesAssignment4.Controllers
         [HttpGet, Route("")]
         public List<OrderInfo> Get()
         {
-            List<OrderInfo> list = orderService.GetOrders();
-            return list;
+            return orderService.GetOrders();
         }
 
         // GET

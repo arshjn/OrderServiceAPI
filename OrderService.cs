@@ -142,7 +142,7 @@ namespace WebServicesAssignment4
                 if (order.OrderID == orderID)
                 {
                     order.TrackingNumber = trackingNumber;
-                    return "Tracking Number Updated: " + trackingNumber;
+                    return "Tracking Number Updated";
                 }
             }
             return null;
