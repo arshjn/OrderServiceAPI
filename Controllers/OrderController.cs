@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using WebServicesAssignment4;
 
 namespace WebServicesAssignment4.Controllers
 {
+    [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
     [Route("[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
@@ -31,6 +33,7 @@ namespace WebServicesAssignment4.Controllers
         }
 
         // PATCH
+        [Authorize(Roles = "admin")]
         [HttpPatch, Route("id/{id}/tracking/{tno}")]
         public string Patch(int id, string tno)
         {

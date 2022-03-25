@@ -114,7 +114,7 @@ namespace WebServicesAssignment4
 
             foreach (Order order in orders)
             {
-                OrderInfo orderInfo = new OrderInfo(order.OrderID, order.Customer.FirstName + order.Customer.LastName, order.OrderDate);
+                OrderInfo orderInfo = new OrderInfo(order.OrderID, order.Customer.FirstName + " " + order.Customer.LastName, order.OrderDate);
                 infos.Add(orderInfo);
             }
         }
